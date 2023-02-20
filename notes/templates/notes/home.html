@@ -1,0 +1,105 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notes</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="">
+    <!-- FontAwesome import -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css"
+        integrity="sha512-cHxvm20nkjOUySu7jdwiUxgGy11vuVPE9YeK89geLMLMMEOcKFyS2i+8wo0FOwyQO/bL8Bvq1KMsqK4bbOsPnA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css"
+        integrity="sha512-L+sMmtHht2t5phORf0xXFdTC0rSlML1XcraLTrABli/0MMMylsJi3XA23ReVQkZ7jLkOEIMicWGItyK4CAt2Xw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css"
+        integrity="sha512-bdTSJB23zykBjGDvyuZUrLhHD0Rfre0jxTd0/jpTbV7sZL8DCth/88aHX0bq2RV8HK3zx5Qj6r2rRU/Otsjk+g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap import css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-size: 1.6rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="text-white bg-dark">
+        <div class="container p-3">
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-1 d-flex align-items-center justify-content-center">
+                            <a href="/">
+                                <i class="fa-solid fa-feather-pointed" style="font-size: 6rem;"></i>
+                            </a>
+                        </div>
+                        <div class="col-11">
+                            <a href="/" class="col d-flex align-items-center justify-content-start"
+                                style="width: fit-content;">
+                                <h1 class="h1" style="font-size: 6rem;"> Notes </h1>
+                            </a>
+                            <h4 class="h4">Get organized, simple as a note.</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-center justify-content-end">
+                    <div class="dropdown-center" style="font-size: xx-large;">
+                        <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-bars"></i>
+                        </a>
+                        <ul class="dropdown-menu" style="font-size: large;">
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center gap-3" href="#">
+                                    <i class="fa-solid fa-circle-user fa-2x"></i>
+                                    <span>{{ name }}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <!-- bootstrap import js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
