@@ -56,7 +56,7 @@
             height: 5rem;
             max-width: 60rem;
 
-            margin-block: 1.5rem;
+            margin-block: 3rem;
             margin-inline: auto;
 
             overflow: hidden;
@@ -97,7 +97,42 @@
             display: flex;
             flex-direction: column;
             row-gap: 1.5rem;
-            margin-block-end: 1.5rem;
+            margin-block-end: 3rem;
+        }
+
+        .note {
+            overflow: hidden;
+            border-radius: 2rem;
+            transition: all 300ms ease-in-out;
+        }
+
+        .note:hover {
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+
+        .note .card-body {
+            padding: 2rem;
+        }
+
+        .note .card-header {
+            padding: 0;
+        }
+
+        .note-img {
+            max-width: 100%;
+        }
+
+        .note-content {
+            /* text-indent: 5rem; */
+            text-align: justify;
+        }
+
+        .main-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5rem;
         }
     </style>
 

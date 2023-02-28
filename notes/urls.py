@@ -1,7 +1,8 @@
 from django.urls import path
 
-from notes.views import home
+from notes.views import home, notes
 
 urlpatterns = [
-    path('', home)
+    path('', home, name='home'),
+    path('/notes/', notes, name='notes')
 ]

@@ -1,0 +1,44 @@
+<div class="col-4">
+    <a href="{% url 'notes' %}" class="card note">
+        <div class="card-header">
+            <img src="https://negativespace.co/wp-content/uploads/2017/05/negative-space-macbook-ipad-notes-coffee-thought-catalog-thumb-1.jpg"
+                alt="note-image" class="note-img">
+        </div>
+        <div class="card-body">
+            <!-- header note -->
+            <div class="row my-2">
+                <h1>Default Note</h1>
+            </div>
+            <!-- info note-->
+            <div class="row my-2 d-flex text-secondary" style="font-size: 1.2rem;">
+                <!-- creator info -->
+                <div class="col-3">
+                    <i class="fa-solid fa-user"></i>
+                    <span>{{name}}</span>
+                </div>
+                <!-- creation date info -->
+                <div class="col-3">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>{% now "d/m/y G:i" %}</span>
+                </div>
+                <!-- preview tags info-->
+                <div class="col-6 d-flex align-items-center justify-content-start" style="gap: 0.5rem;">
+                    <i class="fa-solid fa-tags"></i>
+                    <span class="badge rounded-pill text-bg-primary">Note</span>
+                    <span class="badge rounded-pill text-bg-danger">Note</span>
+                    <span class="badge rounded-pill text-bg-success">Note</span>
+                </div>
+            </div>
+            <!-- preview content note -->
+            <div class="row note-content">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type specimen book. It has
+                    survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of
+                    Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </div>
+    </a>
+</div>
