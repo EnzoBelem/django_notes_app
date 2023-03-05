@@ -1,8 +1,10 @@
 {% extends 'global/decorator.html' %}
 {% block title %}Home |{% endblock title %}
+{% block serch_bar %}
+    {% include 'notes/layout/search_bar.html' %}
+{% endblock serch_bar %}
 {% block content %}
-    <div class="row">
+    {% for note in notes %}
         {% include 'notes/layout/note_card.html' %}
-        {% include 'notes/layout/note_card.html' %}
-    </div>
+    {% endfor %}
 {% endblock content %}

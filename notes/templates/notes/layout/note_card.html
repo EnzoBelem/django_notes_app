@@ -1,44 +1,38 @@
-<div class="col-4">
-    <a href="{% url 'note' note_id=1 %}" class="card note">
-        <div class="card-header">
-            <img src="https://negativespace.co/wp-content/uploads/2017/05/negative-space-macbook-ipad-notes-coffee-thought-catalog-thumb-1.jpg"
-                alt="note-image" class="note-img">
+<a href="{% url 'note' note_id=1 %}" class="card card-note">
+    <!-- cover note -->
+    <div class="card-header">
+        <img src="{{note.cover.url}}" alt="card-note-image" class="card-note-img">
+    </div>
+    <div class="card-body">
+        <!-- title note -->
+        <div class="row my-2">
+            <h1 class="card-note-title">{{note.title}}</h1>
         </div>
-        <div class="card-body">
-            <!-- header note -->
-            <div class="row my-2">
-                <h1>Default Note {{note_number}}</h1>
+        <!-- info note-->
+        <div class="row my-2 text-secondary card-note-infos">
+            <!-- creator info -->
+            <div class="info-creator">
+                <i class="fa-solid fa-user fa-lg"></i>
+                <span>{{note.author.first_name}} {{note.author.last_name}}</span>
             </div>
-            <!-- info note-->
-            <div class="row my-2 d-flex text-secondary" style="font-size: 1.2rem;">
-                <!-- creator info -->
-                <div class="col-3">
-                    <i class="fa-solid fa-user"></i>
-                    <span>{{name}}</span>
-                </div>
-                <!-- creation date info -->
-                <div class="col-3">
-                    <i class="fa-solid fa-calendar"></i>
-                    <span>{% now "d/m/y G:i" %}</span>
-                </div>
-                <!-- preview tags info-->
-                <div class="col-6 d-flex align-items-center justify-content-start" style="gap: 0.5rem;">
-                    <i class="fa-solid fa-tags"></i>
-                    <span class="badge rounded-pill text-bg-primary">Note</span>
-                    <span class="badge rounded-pill text-bg-danger">Note</span>
-                    <span class="badge rounded-pill text-bg-success">Note</span>
-                </div>
+            <!-- created_at info -->
+            <div class="info-created-at">
+                <i class="fa-solid fa-calendar fa-lg"></i>
+                <span>{{note.created_at|date:"d/m/Y"}} às {{note.created_at|date:"H:i"}}</span>
             </div>
-            <!-- preview content note -->
-            <div class="row note-content">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                    has been the industry's standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a type specimen book. It has
-                    survived not only five centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the 1960s with the release of
-                    Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <!-- preview tags info-->
+            <div class="info-tags">
+                <i class="fa-solid fa-tags fa-lg"></i>
+                <div class="container-tags">
+                    {% for tag in note.tags %}
+                    <span class="tag">{{tag.name}}</span>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </a>
-</div>
+        <!-- description note -->
+        <div class="row mt-4 card-note-description">
+            <p>{{note.description}}</p>
+        </div>
+    </div>
+</a>

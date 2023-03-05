@@ -1,0 +1,64 @@
+<div class="card page-note">
+    <!-- cover note -->
+    <div class="card-header">
+        <img src="{{note.cover.url}}" alt="note image">
+    </div>
+    <div class="card-body">
+        <!-- title note -->
+        <div class="row">
+            <h1 class="page-note-title">{{note.title}}</h1>
+        </div>
+        <!-- content note -->
+        <div class="row">
+            <p class="page-note-content">{{note.note_text}}</p>
+        </div>
+        <!-- infos note -->
+        <div class="my-2 text-secondary page-note-infos">
+            <!-- creator info -->
+            <div class="info-creator">
+                <i class="fa-solid fa-user fa-lg"></i>
+                <span>{{note.author.first_name}} {{note.author.last_name}}</span>
+            </div>
+            <!-- created_at info -->
+            <div class="info-created-at">
+                <i class="fa-solid fa-calendar fa-lg"></i>
+                <span>{{note.created_at|date:"d/m/Y"}} às {{note.created_at|date:"H:i"}}</span>
+            </div>
+            <!-- preview tags info-->
+            <div class="info-tags">
+                <i class="fa-solid fa-tags fa-lg"></i>
+                <div class="container-tags">
+                    {% for tag in note.tags %}
+                    <span class="tag">{{tag.name}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% comment %} <!-- info note-->
+        <div class="row my-2 text-secondary card-note-infos">
+            <!-- creator info -->
+            <div class="info-creator">
+                <i class="fa-solid fa-user fa-lg"></i>
+                <span>{{note.author.first_name}} {{note.author.last_name}}</span>
+            </div>
+            <!-- created_at info -->
+            <div class="info-created-at">
+                <i class="fa-solid fa-calendar fa-lg"></i>
+                <span>{{note.created_at|date:"d/m/Y"}} às {{note.created_at|date:"H:i"}}</span>
+            </div>
+            <!-- preview tags info-->
+            <div class="info-tags">
+                <i class="fa-solid fa-tags fa-lg"></i>
+                <div class="container-tags">
+                    {% for tag in note.tags %}
+                    <span class="tag">{{tag.name}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- description note -->
+        <div class="row mt-4 card-note-description">
+            <p>{{note.description}}</p>
+        </div> {% endcomment %}
+    </div>
+</div>
