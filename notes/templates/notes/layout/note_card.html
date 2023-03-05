@@ -1,5 +1,5 @@
 <div class="col-4">
-    <a href="{% url 'notes' %}" class="card note">
+    <a href="{% url 'note' note_id=1 %}" class="card note">
         <div class="card-header">
             <img src="https://negativespace.co/wp-content/uploads/2017/05/negative-space-macbook-ipad-notes-coffee-thought-catalog-thumb-1.jpg"
                 alt="note-image" class="note-img">
@@ -7,7 +7,7 @@
         <div class="card-body">
             <!-- header note -->
             <div class="row my-2">
-                <h1>Default Note</h1>
+                <h1>Default Note {{note_number}}</h1>
             </div>
             <!-- info note-->
             <div class="row my-2 d-flex text-secondary" style="font-size: 1.2rem;">
