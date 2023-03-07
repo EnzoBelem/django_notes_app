@@ -1,4 +1,4 @@
-<a href="{% url 'note' note_id=1 %}" class="card card-note">
+<a href="{% url 'notes:note_page' note.note_id %}" class="card card-note">
     <!-- cover note -->
     <div class="card-header">
         <img src="{{note.cover.url}}" alt="card-note-image" class="card-note-img">

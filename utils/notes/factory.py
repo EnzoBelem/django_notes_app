@@ -11,6 +11,7 @@ def rand_ratio():
 
 def make_note():
     return {
+        'note_id': fake.random_number(digits=2, fix_len=True),
         'created_at': fake.date_time(),
         'title': fake.sentence(nb_words=6),
         'description': fake.text(300),

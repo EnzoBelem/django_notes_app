@@ -1,3 +1,13 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Note, Tag
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    ...
+
+
+@admin.register(Note)
+class NoteAdmin(admin.ModelAdmin):
+    ...
