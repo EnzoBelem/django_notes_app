@@ -2,19 +2,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    {% include 'notes/layout/header.html'%}
+    {% include 'notes/layout/head.html' %}
     <title>{% block title %}{% endblock title %} Notes</title>
 </head>
 <body>
-    {% block serch_bar %}{% endblock serch_bar %}
+    <div>
+        {% include 'notes/layout/header.html'%}
+        {% block serch_bar %}{% endblock serch_bar %}
 
-    <!-- page content  -->
-    <section class="container container-content">
-        {% block content %}
+        <!-- page content  -->
+        <section class="container container-content">
+            {% block content %}
 
-        {% endblock content %}
-    </section>
-
+            {% endblock content %}
+        </section>
+    </div>
+    
     {% include 'notes/layout/footer.html' %}
 
     <!-- bootstrap import js -->

@@ -22,6 +22,7 @@ class Note(models.Model):
     is_public = models.BooleanField(default=False)
     is_verified = models.BooleanField(default=False)
     is_published = models.BooleanField(default=False)
+    is_content_html = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
