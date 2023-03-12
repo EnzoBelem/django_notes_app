@@ -22,12 +22,14 @@
             </div>
             <!-- preview tags info-->
             <div class="info-tags">
+                {% if note.tags.all %}
                 <i class="fa-solid fa-tags fa-lg"></i>
                 <div class="container-tags">
                     {% for tag in note.tags.all %}
                     <a href="{% url 'notes:tag_page' tag.id %}" class="tag">{{tag.name}}</a>
                     {% endfor %}
                 </div>
+                {% endif %}
             </div>
         </div>
         <!-- description note -->
