@@ -3,6 +3,8 @@
     --color-light: rgb(255, 255, 255);
     --color-light-50: rgb(255, 255, 255, 0.5);
     --color-dark:  rgb(33, 37, 41);
+    --color-dark-20:  rgba(33, 37, 41, 0.2);
+    --color-dark-80:  rgba(33, 37, 41, 0.8);
     --color-blue:  rgb(13, 110, 253);
     --color-blue-10:  rgba(13, 109, 253, 0.1);
 }

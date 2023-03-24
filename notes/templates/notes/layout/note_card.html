@@ -40,7 +40,7 @@
 </div> {% endcomment %}
 
 <div class="card-note-cell">
-    <div class="card-note">
+    <div class="card-note show-description">
         <div class="card-image">
             <img src="{{note.cover.url}}" alt="card-cover" class="card-img">
         </div>
@@ -49,12 +49,32 @@
             <p>{{note.description}}</p>
             <!-- note infos -->
             <div class="card-info">
-    
+                <!-- creator info -->
+                <div class="info-creator">
+                    <i class="fa-solid fa-user"></i>
+                    <span>{{note.author}}</span>
+                </div>
+                <!-- created_at info -->
+                <div class="info-created-at">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>{{note.created_at|date:"d/m/Y"}} às {{note.created_at|date:"H:i"}}</span>
+                </div>
+                <!-- preview tags info-->
+                <div class="info-tags">
+                    {% if note.tags.all %}
+                    <i class="fa-solid fa-tags"></i>
+                    <div class="container-tags">
+                        {% for tag in note.tags.all %}
+                        <a href="{% url 'notes:tag_page' tag.id %}" class="tag">{{tag.name}}</a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
             </div>
             <!-- view more button -->
-            <div class="card-view-more">
-                
-            </div>
+            <a class="card-view-more" href="{% url 'notes:note_details' note.id %}">
+                <button>See more</button>
+            </a>
         </div>
     </div>
 </div>

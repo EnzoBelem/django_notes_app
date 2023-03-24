@@ -1,4 +1,5 @@
 {% extends 'global/decorator.html' %}
+{% load static %}
 {% block title %}{{title}}{% endblock title %}
 {% block serch_bar %}
     {% include 'notes/layout/search_bar.html' %}
@@ -12,3 +13,6 @@
     {% endfor %}
     </div>
 {% endblock content %}
+{% block scripts %}
+    <script src="{% static 'notes/js/home.js' %}" type="module"></script>
+{% endblock scripts %}
