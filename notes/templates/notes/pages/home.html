@@ -4,9 +4,11 @@
     {% include 'notes/layout/search_bar.html' %}
 {% endblock serch_bar %}
 {% block content %}
-    {% for note in notes %}
+    <div class="card-note-container">
+        {% for note in notes %}
         {% include 'notes/layout/note_card.html' %}
         {% empty %}
         {% include 'notes/layout/empty_page.html' %}
     {% endfor %}
+    </div>
 {% endblock content %}

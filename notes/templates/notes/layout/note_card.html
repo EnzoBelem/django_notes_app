@@ -1,6 +1,6 @@
-<div class="card card-note">
+{% comment %} <div class="card card-note">
     <!-- cover note -->
-    <a class="card-header" href="{% url 'notes:note_page' note.id %}">
+    <a class="card-header" href="{% url 'notes:note_details' note.id %}">
         <img src="{{note.cover.url}}" alt="card-note-image" class="card-note-img">
     </a>
     <div class="card-body">
@@ -35,6 +35,26 @@
         <!-- description note -->
         <div class="row mt-4 card-note-description">
             <p>{{note.description}}</p>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+<div class="card-note-cell">
+    <div class="card-note">
+        <div class="card-image">
+            <img src="{{note.cover.url}}" alt="card-cover" class="card-img">
+        </div>
+        <div class="card-description">
+            <h1 class="card-note-title">{{note.title}}</h1>
+            <p>{{note.description}}</p>
+            <!-- note infos -->
+            <div class="card-info">
+    
+            </div>
+            <!-- view more button -->
+            <div class="card-view-more">
+                
+            </div>
         </div>
     </div>
 </div>

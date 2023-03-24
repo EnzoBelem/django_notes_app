@@ -11,7 +11,7 @@ def home(request):
     })
 
 
-def notes_by_tag(request, tag_id):
+def tag_page(request, tag_id):
     notes = get_list_or_404(
         Note.objects.filter(
             is_published=True,
@@ -26,7 +26,7 @@ def notes_by_tag(request, tag_id):
     })
 
 
-def note(request, note_id):
+def note_details(request, note_id):
     note = get_object_or_404(
         Note.objects.filter(
             id=note_id
