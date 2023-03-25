@@ -1,5 +1,12 @@
 {% extends 'global/decorator.html' %}
 {% block title %}Note Details{% endblock title %}
+{% block note_page_cover %}
+<div class="note-page-cover">
+    {% if note.page_cover %}
+    <img src="{{note.page_cover.url}}" alt="card-cover" class="card-img">
+    {% endif %}
+</div>
+{% endblock note_page_cover %}
 {% block content %}
     {% include 'notes/layout/note_details.html' %}
 {% endblock content %}

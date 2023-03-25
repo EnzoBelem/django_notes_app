@@ -1,48 +1,9 @@
-{% comment %} <div class="card card-note">
-    <!-- cover note -->
-    <a class="card-header" href="{% url 'notes:note_details' note.id %}">
-        <img src="{{note.cover.url}}" alt="card-note-image" class="card-note-img">
-    </a>
-    <div class="card-body">
-        <!-- title note -->
-        <div class="row my-2">
-            <h1 class="card-note-title">{{note.title}}</h1>
-        </div>
-        <!-- info note-->
-        <div class="row my-2 text-secondary card-note-infos">
-            <!-- creator info -->
-            <div class="info-creator">
-                <i class="fa-solid fa-user fa-lg"></i>
-                <span>{{note.author}}</span>
-            </div>
-            <!-- created_at info -->
-            <div class="info-created-at">
-                <i class="fa-solid fa-calendar fa-lg"></i>
-                <span>{{note.created_at|date:"d/m/Y"}} às {{note.created_at|date:"H:i"}}</span>
-            </div>
-            <!-- preview tags info-->
-            <div class="info-tags">
-                {% if note.tags.all %}
-                <i class="fa-solid fa-tags fa-lg"></i>
-                <div class="container-tags">
-                    {% for tag in note.tags.all %}
-                    <a href="{% url 'notes:tag_page' tag.id %}" class="tag">{{tag.name}}</a>
-                    {% endfor %}
-                </div>
-                {% endif %}
-            </div>
-        </div>
-        <!-- description note -->
-        <div class="row mt-4 card-note-description">
-            <p>{{note.description}}</p>
-        </div>
-    </div>
-</div> {% endcomment %}
-
 <div class="card-note-cell">
-    <div class="card-note show-description">
+    <div class="card-note">
         <div class="card-image">
-            <img src="{{note.cover.url}}" alt="card-cover" class="card-img">
+            {% if note.card_cover %}
+            <img src="{{note.card_cover.url}}" alt="card-cover" class="card-img">
+            {% endif %}
         </div>
         <div class="card-description">
             <h1 class="card-note-title">{{note.title}}</h1>

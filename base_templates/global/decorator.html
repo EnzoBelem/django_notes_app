@@ -1,4 +1,3 @@
-{% include 'notes/layout/head.html' %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,11 +5,12 @@
     <title>{% block title %}{% endblock title %} | Notes</title>
 </head>
 <body>
-    <div>
+    <div class="upper-content">
+        <!-- header / search bar or page cover -->
         {% include 'notes/layout/header.html'%}
         {% block serch_bar %}{% endblock serch_bar %}
-
-        <!-- page content  -->
+        {% block note_page_cover %}{% endblock note_page_cover %}
+        <!-- page main content  -->
         <section class="container container-content">
             {% block content %}
 

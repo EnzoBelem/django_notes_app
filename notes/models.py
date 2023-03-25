@@ -15,7 +15,10 @@ class Note(models.Model):
     description = models.CharField(max_length=165)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    cover = models.ImageField(upload_to='notes/covers/%Y/%m/%d/')
+    page_cover = models.ImageField(
+        upload_to='notes/page_covers/%Y/%m/%d/', blank=True, default='')
+    card_cover = models.ImageField(
+        upload_to='notes/card_covers/%Y/%m/%d/', blank=True, default='')
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag)

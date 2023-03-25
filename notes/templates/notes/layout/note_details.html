@@ -1,4 +1,4 @@
-<div class="card page-note">
+{% comment %} <div class="card page-note">
     <!-- cover note -->
     <div class="card-header">
         <img src="{{note.cover.url}}" alt="note image">
@@ -40,6 +40,45 @@
                     <span class="tag">{{tag.name}}</span>
                     {% endfor %}
                 </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+<div class="page-note">    
+    <div class="note-title-and-card">
+        <div class="card-cover-container">
+            {% if note.card_cover %}
+            <img src="{{note.card_cover.url}}" alt="card cover">
+            {% endif %}
+        </div>
+        <h1>{{note.title}}</h1>
+    </div>
+    <div class="page-content">
+        {% if note.is_content_html %}
+        {{note.content|safe}}
+        {% else %}
+        {{note.content|linebreaksbr}}
+        {% endif %}
+    </div>
+    <div class="note-infos">
+        <!-- creator info -->
+        <div class="info-creator">
+            <i class="fa-solid fa-user fa-lg"></i>
+            <span>{{note.author}}</span>
+        </div>
+        <!-- created_at info -->
+        <div class="info-created-at">
+            <i class="fa-solid fa-calendar fa-lg"></i>
+            <span>{{note.created_at|date:"d/m/Y"}} às {{note.created_at|date:"H:i"}}</span>
+        </div>
+        <!-- preview tags info-->
+        <div class="info-tags">
+            <i class="fa-solid fa-tags fa-lg"></i>
+            <div class="container-tags">
+                {% for tag in note.tags.all %}
+                <span class="tag">{{tag.name}}</span>
+                {% endfor %}
             </div>
         </div>
     </div>
