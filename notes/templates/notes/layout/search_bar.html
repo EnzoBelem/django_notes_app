@@ -1,6 +1,6 @@
 <div class="container">
-    <form class="search-form">
-        <input type="search" name="" id="" class="search-input" placeholder="Search for your notes">
+    <form action="{% url 'notes:note_search' %}" method="GET" class="search-form">
+        <input type="search" name="q" id="input_serch" class="search-input" value="{{search_query}}" placeholder="Search for your notes" required>
         <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 </div>

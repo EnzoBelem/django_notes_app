@@ -1,9 +1,10 @@
+from django.http import HttpResponse
 from django.shortcuts import get_list_or_404, get_object_or_404, render
 
 from .models import Note, Tag
 
 
-def home(request):
+def home_page(request):
     notes = Note.objects.filter(is_published=True).order_by('-id')
     return render(request, 'notes/pages/home.html', context={
         'notes': notes,
@@ -35,3 +36,15 @@ def note_details(request, note_id):
     return render(request, 'notes/pages/note_page.html', context={
         'note': note,
     })
+
+
+def note_search(request):
+
+    search_query = request.GET.get('q', '').strip()
+
+    if not search_query:
+        return HttpResponse(status=404)
+
+    return render(request, 'notes/pages/search_page.html',
+                  context={'title': 'Search',
+                           'search_query': search_query})
