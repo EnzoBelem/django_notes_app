@@ -27,7 +27,7 @@ mypy-extensions==1.0.0
 outcome==1.2.0
 packaging==23.0
 parameterized==0.8.1
-Pillow==9.4.0
+Pillow==10.2.0
 pluggy==1.0.0
 py==1.11.0
 pycodestyle==2.10.0
